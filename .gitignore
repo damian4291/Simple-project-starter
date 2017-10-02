@@ -12,7 +12,6 @@ node_modules/
 jspm_packages/
 typings/
 
-
 .sass-cache/
 .tmp
 .npm
