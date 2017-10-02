@@ -11,8 +11,10 @@ bower_components
 node_modules/
 jspm_packages/
 typings/
-.sass-cache/
 
+
+.sass-cache/
+.tmp
 .npm
 .eslintcache
 .node_repl_history
