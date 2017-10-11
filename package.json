@@ -15,6 +15,8 @@
     "gulp-autoprefixer": "^4.0.0",
     "gulp-babel": "^7.0.0",
     "gulp-cssnano": "^2.1.2",
+    "gulp-file-include": "^1.2.0",
+    "gulp-htmlmin": "^3.0.0",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-sass": "^3.1.0",
