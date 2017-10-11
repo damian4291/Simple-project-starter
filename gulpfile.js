@@ -44,7 +44,9 @@ gulp.task('styles', () => {
 
 gulp.task('scripts', () => {
     return gulp.src('app/scripts/*.js')
-        .pipe(babel({ presets: ['env'] }))
+        .pipe(babel({ 
+            presets: ['env'] 
+        }))
         .pipe(gulp.dest('.tmp/scripts'))
         .pipe(browserSync.stream());
 });
@@ -59,6 +61,11 @@ gulp.task('images', () => {
         }))
         .pipe(gulp.dest('dist/images'))
         .pipe(browserSync.stream());
+});
+
+gulp.task('fonts', () => {
+    return gulp.src('app/fonts/*.{eot,svg,ttf,woff,woff2}')
+        .pipe(gulp.dest('dist/fonts'))
 });
 
 gulp.task('html', ['styles', 'scripts'], () => {
@@ -94,7 +101,9 @@ gulp.task('html:serve', ['styles', 'scripts'], () => {
             prefix: '@@',
             basepath: '@file' 
         }))
-        .pipe(useref({searchPath: ['.tmp', 'app', '.']}))
+        .pipe(useref({ 
+            searchPath: ['.tmp', 'app', '.'] 
+        }))
         .pipe(gulp.dest('.tmp'))
         .pipe(browserSync.stream());
 });
@@ -108,9 +117,12 @@ gulp.task('extras', () => {
     }).pipe(gulp.dest('dist'));
 });
     
-gulp.task('build', ['html', 'images', 'extras'], () => {
+gulp.task('build', ['html', 'images', 'fonts', 'extras'], () => {
     return gulp.src('dist/**/*')
-        .pipe(size({ title: 'build', gzip: true }));
+        .pipe(size({
+            title: 'build', 
+            gzip: true 
+        }));
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
